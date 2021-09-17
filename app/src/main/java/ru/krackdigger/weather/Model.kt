@@ -1,7 +1,5 @@
 package ru.krackdigger.weather
 
-data class Movie(val name: String, val imageUrl: String, val category: String)
-
 data class SimpleJSONModel(
 
     var current: Current?

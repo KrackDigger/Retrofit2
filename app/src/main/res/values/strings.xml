@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Weather</string>
+    <string name="app_name">Погода</string>
+    <string name="moscow">Москва</string>
 </resources>
