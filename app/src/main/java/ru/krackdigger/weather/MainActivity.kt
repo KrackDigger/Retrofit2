@@ -6,7 +6,6 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -54,10 +53,7 @@ class MainActivity : AppCompatActivity() {
             binding.temp.text = it.current?.temp?.let { it1 -> Math.round(it1.toDouble()).toString() } + "°"
             Picasso.get().load(url).into(binding.iconImg);
             binding.description.text = it.current?.weather?.get(0)?.description
-            val main: String
-            when(it.current?.weather?.get(0)?.main) {
-                "Cloud" -> main = "Облачно"
-            }
+
             binding.description2.text = "Ощущается как " + it.current?.feels_like?.let {
                 it1 -> Math.round(it1.toDouble()).toString()
             } + "°"
@@ -104,13 +100,10 @@ class MainActivity : AppCompatActivity() {
                     connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
             if (capabilities != null) {
                 if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
                     return true
                 } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
                     return true
                 } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
                     return true
                 }
             }
