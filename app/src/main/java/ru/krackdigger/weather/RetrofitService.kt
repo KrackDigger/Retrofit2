@@ -8,7 +8,7 @@ import retrofit2.http.GET
 interface RetrofitService {
 
     @GET("onecall?lat=55.75&lon=37.61&units=metric&lang=ru&exclude=daily&appid=f72e1fe35389060ff46a3152b244637e")
-    suspend fun getAllMovies() : Response<SimpleJSONModel>
+    suspend fun getAllMovies() : Response<Model>
 
     companion object {
         var retrofitService: RetrofitService? = null

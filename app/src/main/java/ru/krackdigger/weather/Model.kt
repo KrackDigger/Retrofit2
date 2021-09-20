@@ -1,12 +1,14 @@
 package ru.krackdigger.weather
 
-data class SimpleJSONModel(
+data class Model(
 
     var current: Current?
 )
 
 data class Current(
     val dt: Long?,
+    val sunrise: Long?,
+    val sunset: Long?,
     val temp: Double?,
     val feels_like: Double?,
     val pressure: Int?,

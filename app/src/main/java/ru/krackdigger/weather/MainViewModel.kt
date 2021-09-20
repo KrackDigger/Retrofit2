@@ -7,7 +7,7 @@ import kotlinx.coroutines.*
 class MainViewModel constructor(private val mainRepository: MainRepository) : ViewModel() {
 
     val errorMessage = MutableLiveData<String>()
-    val movieList = MutableLiveData<SimpleJSONModel>()
+    val movieList = MutableLiveData<Model>()
     var job: Job? = null
     val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         onError("Exception handled: ${throwable.localizedMessage}")
