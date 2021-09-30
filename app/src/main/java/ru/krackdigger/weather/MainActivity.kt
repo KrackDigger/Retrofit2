@@ -66,7 +66,8 @@ class MainActivity : AppCompatActivity() {
             val sunset: String = java.text.SimpleDateFormat("HH:mm")
                 .format(java.util.Date (it.current?.sunset!! * 1000));
 
-            binding.pressure.text = "Давление: " + mmHg.toInt().toString() + " мм рт. ст." + "\r\n" +
+            binding.pressure.text =
+                    // "Давление: " + mmHg.toInt().toString() + " мм рт. ст." + "\r\n" +
                     "Влажность: " + it.current?.humidity + "%" + "\r\n" +
                     "Скорость ветра: " + it.current?.wind_speed + " м/с" + "\r\n" +
                     "Видимость: " + it.current?.visibility + " м" + "\r\n" +
